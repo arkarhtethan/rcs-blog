@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { Footer } from './components/Footer';
+import { Navbar } from './components/Navbar';
+import NotFound from './screens/NotFound';
+import PostDetails from './screens/PostDetails';
+import PostList from './screens/PostList';
 
-function App() {
+export default function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<PostList />} />
+          <Route path="/:id" element={<PostDetails />} />
+          <Route path="/404" element={<NotFound />} />
+        </Routes>
+      </div>
+      <Footer />
     </div>
-  );
+  )
 }
-
-export default App;
