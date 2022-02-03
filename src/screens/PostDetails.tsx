@@ -26,7 +26,7 @@ const PostDetails = () => {
         return <div className="h-96 flex flex-col items-center justify-center"><Loading /></div>
     }
 
-    return <div className="px-8 py-12 shadow-lg mx-8 my-12">
+    return <div className="lg:px-8 lg:py-12 p-4 shadow-lg mx-8 my-12">
         <h1 className="font-bold text-lg capitalize mb-9">{post.title}</h1>
         <p>
             {post.body}
